@@ -26,13 +26,12 @@ class Parser(YargyParser):
 
 
 class Match(Record):
-    __attributes__ = ['start', 'stop', 'fact']
+    __attributes__ = ['start', 'stop']
 
 
 def adapt_match(match):
     start, stop = match.span
-    fact = match.fact.obj
-    return Match(start, stop, fact)
+    return Match(start, stop)
 
 
 class Extractor:
